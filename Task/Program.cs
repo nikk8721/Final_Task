@@ -21,10 +21,6 @@ for (int i = 0; i < n; i++)
         {
             Arr2[i] = s;
         }
-        string temp;
-        temp = Arr2[i];
-        Arr2[i] = Arr [i];
-        Arr[i] = temp;
     }
     
 }
