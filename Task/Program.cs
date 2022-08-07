@@ -3,7 +3,6 @@
 Console.WriteLine("Введите кол-во элементов массива:");
 int n = Convert.ToInt32(Console.ReadLine());
 string[] Arr = new string [n];
-string[] Arr2 = new string [n];
 for (int i = 0; i < n; i++)
 {
     Console.Write("Введите значения: ");
@@ -12,16 +11,29 @@ for (int i = 0; i < n; i++)
 Console.WriteLine();
 Console.WriteLine("Начальный массив: [" + string.Join(", ", Arr) + "]");
 // Формирование массива по условию
-for (int i = 0; i < n; i++)
+int count = 0; // Ввод переменной - счетчика
+for (int i = 0; i < n; i++) // Цикл подсчета элементов, подходящих по условию
 {
     string s = Arr[i];
     if (s.Length <= 3)
     {
-        for (int j = 0; j < n; j++)
         {
-            Arr2[i] = s;
+            count++;
         }
-    }
-    
+    }    
 }
-Console.WriteLine("Итоговый массив: [" + string.Join(", ", Arr2) + "]");                    
+string[] Arr2 = new string [count]; // Формируем новый массив, длина которого равна счетчику
+int min = 0; // Ввод переменной счетчика индекса нового массива
+for (int i = 0; i < n; i++) // Цикл формирования нового массива по значениям из старого, совпадающих по условию
+{
+    string s = Arr[i];
+    if (s.Length <= 3)
+    {
+        for (int j = 0; j < count; j++)
+        {
+            Arr2[min] = s;
+        }
+        min++;
+    }    
+}
+Console.WriteLine("Итоговый массив: [" + string.Join(", ", Arr2) + "]");                
