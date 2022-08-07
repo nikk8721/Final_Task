@@ -6,7 +6,7 @@ string[] Arr = new string [n];
 for (int i = 0; i < n; i++)
 {
     Console.Write("Введите значения: ");
-    Arr[i] = (Console.ReadLine());
+    Arr[i] = Console.ReadLine();
 }
 Console.WriteLine();
 Console.WriteLine("Начальный массив: [" + string.Join(", ", Arr) + "]");
